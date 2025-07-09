@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Game Lore - Explore the history, culture, and evolution of video games in a bold, pixel-art style. Journey through decades of gaming, from arcades to VR.">
+  <meta name="keywords" content="gaming, video games, pixel art, game history, timeline, retro, VR, indie games, esports, cloud gaming">
+  <meta name="author" content="Game Lore Team">
+  <meta property="og:title" content="Game Lore - Pixel Edition">
+  <meta property="og:description" content="Explore the history, culture, and evolution of video games in a bold, pixel-art style.">
+  <meta property="og:image" content="https://img.icons8.com/ios-filled/100/00ffee/console.png">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#00ffee">
+  <title>Game Lore - Pixel Edition</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    .scroll-animate { opacity: 0; transition: opacity 0.5s, transform 0.5s; will-change: opacity, transform;}
+    .scroll-animate.visible { opacity: 1; animation: fadeInUp 0.8s cubic-bezier(.23,1.01,.32,1) both;}
+    .scroll-animate-left.visible { opacity: 1; animation: fadeInLeft 0.8s cubic-bezier(.23,1.01,.32,1) both;}
+    .scroll-animate-right.visible { opacity: 1; animation: fadeInRight 0.8s cubic-bezier(.23,1.01,.32,1) both;}
+    img.pixel-img { image-rendering: pixelated; width: 100px; height: 100px; margin-top: 10px;}
+    .hero { position: relative; min-height: 100vh; background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1470&q=80') center center/cover no-repeat; display: flex; justify-content: center; align-items: center; text-align: center; z-index: 1; padding: 2rem; font-family: 'VT323', monospace !important;}
+    .overlay { position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.7); z-index: 1;}
+    .hero-content { position: relative; z-index: 2; max-width: 700px; padding: 2rem; background: rgba(0, 0, 0, 0.4); border: 4px solid #00ffee; border-radius: 8px; box-shadow: 0 0 15px #00ffeeaa; font-family: 'VT323', monospace !important;}
+    .gradient-text { background: linear-gradient(135deg, #00ffe5, #00aaff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family: 'VT323', monospace !important;}
+    .hero p { margin: 1.5rem 0 2rem; color: #70ffea; font-size: 12px; font-family: 'VT323', monospace !important;}
+  </style>
+</head>
+<body>
+  <header class="site-header pixel-font scroll-animate">
+    <div class="header-inner">
+      <a href="#" class="logo-link" style="display:flex;align-items:center;gap:0.7rem;text-decoration:none;">
+        <img src="https://img.icons8.com/ios-filled/50/00ffee/console.png" alt="Game Lore Logo" style="width:48px;height:48px;image-rendering:pixelated;filter:drop-shadow(0 0 8px #00ffee88);">
+        <span class="site-title gradient-text" style="font-size:2.7rem;letter-spacing:0.08em;">Game Lore</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#flappy-dragon-section" class="nav-link">Flappy Dragon</a>
+        <a href="#main-timeline" class="nav-link">Timeline</a>
+        <a href="#feedback" class="nav-link">Feedback</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+  <div id="pixel-bg"></div>
+  <h1 class="pixel-font gradient-text scroll-animate" style="font-size:7vw; text-align:center; margin:2vw 0 0.5vw 0; letter-spacing:0.1em;">
+    Game Lore
+  </h1>
+  <!-- ...existing code... -->
+  <section class="hero">
+    <h2 class="pixel-font gradient-text" style="font-size:3vw; text-align:center; margin-bottom:1vw; letter-spacing:0.08em;">Welcome to Game Lore</h2>
+    <div class="overlay"></div>
+    <div class="hero-content scroll-animate"
+      style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:3vw 2vw; background:rgba(0,0,0,0.5); border:4px solid #00ffee; border-radius:16px; box-shadow:0 0 30px #00ffee99; max-width:90vw; margin:0 auto;">
+      <p class="pixel-font"
+        style="font-size:1.5vw; color:#70ffea; margin-bottom:2vw; max-width:600px; text-align:center;">
+        Journey through decades of Game Lore, from simple arcade cabinets to immersive virtual worlds
+      </p>
+      <div class="hero-buttons" style="gap:1vw; margin-bottom:0;">
+        <button class="btn-primary pixel-font" id="exploreBtn" style="font-size:1.5vw; padding:1.2vw 3vw; border-radius:8px;">Explore Timeline</button>
+        <button class="btn-outline pixel-font" id="learnMoreBtn" style="font-size:1.5vw; padding:1.2vw 3vw; border-radius:8px;">Learn More</button>
+      </div>
+    </div>
+  </section>
+<!-- ...existing code... -->
+
+  <!-- Stats Section -->
+  <section class="stats pixel-font">
+    <div class="stats-heading">
+      <h2>Game Lore by the Numbers</h2>
+      <p>The massive scale of modern gaming culture</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-value">3.2B</div><div class="stat-label">Global Gamers</div></div>
+      <div class="stat"><div class="stat-value">$190B</div><div class="stat-label">Industry Revenue</div></div>
+      <div class="stat"><div class="stat-value">50+</div><div class="stat-label">Years of Evolution</div></div>
+      <div class="stat"><div class="stat-value">2.8B</div><div class="stat-label">Mobile Players</div></div>
+    </div>
+  </section>
+
+  <!-- Flappy Dragon Game Section -->
+  <section id="flappy-dragon-section" class="pixel-font" style="background:#0a0a0a; color:#70ffea; padding:2rem 0; text-align:center;">
+    <h2 class="scroll-animate-left" style="color:#00ffee;">Play Flappy Dragon!</h2>
+    <p class="scroll-animate" style="margin-bottom:1.5rem;">Try our exclusive mini-game: guide the dragon through the pipes and beat your high score!</p>
+    <div class="scroll-animate-right" style="display:flex; flex-direction:column; align-items:center;">
+      <iframe src="flappy-dragon.html" title="Flappy Dragon Game" width="420" height="700" style="border:4px solid #00ffee; border-radius:12px; box-shadow:0 0 20px #00ffee55; background:#111; margin-bottom:1rem;" allowfullscreen></iframe>
+      <a href="flappy-dragon.html" target="_blank" style="color:#00ffee; text-decoration:underline; font-size:0.9rem;">Open Flappy Dragon in a new tab</a>
+    </div>
+  </section>
+
+  <!-- Full pixelated timeline with images -->
+  <section class="timeline" id="main-timeline">
+    <h2 class="timeline-heading pixel-font scroll-animate">Game Lore Through the Decades</h2>
+    <p class="timeline-sub pixel-font scroll-animate">From simple pixels to virtual reality - witness the incredible evolution of interactive entertainment</p>
+    <div class="timeline-grid">
+      <!-- Only one set of each decade card, no duplicates -->
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">1970s - The Arcade Era <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <p>The dawn of video gaming with simple but addictive arcade games that laid the foundation for the industry.</p>
+          <ul>
+            <li>1972: Pong, the first commercial arcade video game, is released.</li>
+            <li>1978: Space Invaders launches, sparking the golden age of arcades.</li>
+            <li>1979: Asteroids and vector graphics push technical boundaries.</li>
+            <li>Pac-Man (1980) becomes a cultural icon.</li>
+          </ul>
+          <div class="games">Games: Pong, Space Invaders, Asteroids, Pac-Man</div>
+          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/arcade.png" alt="Pixelated Arcade Machine">
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">1980s - The Console Revolution <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <p>Home consoles became mainstream, bringing games into the living room with classics and colorful graphics.</p>
+          <ul>
+            <li>1983: Nintendo Entertainment System launches in Japan.</li>
+            <li>1985: NES launches in North America, reviving the industry.</li>
+            <li>Rise of iconic franchises: Mario, Zelda, Metroid.</li>
+            <li>8-bit and 16-bit graphics define the era.</li>
+          </ul>
+          <div class="games">Games: Super Mario Bros., The Legend of Zelda, Metroid</div>
+          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/game-console.png" alt="Pixelated Console">
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">1990s - The 3D Revolution <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <p>Introduction of 3D graphics transformed gameplay, making worlds immersive and more complex.</p>
+          <ul>
+            <li>1994: Sony PlayStation launches, popularizing 3D gaming.</li>
+            <li>1996: Nintendo 64 brings analog controls and 3D worlds.</li>
+            <li>Games move from sprites to polygons.</li>
+            <li>Multiplayer gaming rises with split-screen and LAN play.</li>
+          </ul>
+          <div class="games">Games: Final Fantasy VII, GoldenEye 007, Mario 64</div>
+          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/game-controller.png" alt="Pixelated Game Controller">
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">2000s - Online & Mobile <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <p>Internet connectivity and smartphones revolutionized social and mobile gaming.</p>
+          <ul>
+            <li>2004: World of Warcraft launches, defining MMORPGs.</li>
+            <li>2007: iPhone and App Store spark mobile gaming boom.</li>
+            <li>Competitive gaming becomes esports.</li>
+            <li>Social and casual games reach new audiences.</li>
+          </ul>
+          <div class="games">Games: Halo, World of Warcraft, Angry Birds</div>
+          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/smartphone-tablet.png" alt="Pixelated Smartphone">
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">2010s - Indie & Streaming <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <p>Indie games, streaming, and new platforms reshape the industry and gamer culture.</p>
+          <ul>
+            <li>2011: Minecraft launches, showing the power of indie development.</li>
+            <li>2013: PlayStation 4 and Xbox One bring social and streaming features.</li>
+            <li>2017: Nintendo Switch redefines hybrid gaming.</li>
+            <li>Rise of Twitch, YouTube Gaming, and esports as mainstream entertainment.</li>
+            <li><strong>Game Lore Fact:</strong> In 2019, Fortnite hosted a virtual concert with Marshmello, attended by over 10 million players live in-game.</li>
+          </ul>
+          <div class="games">Games: Minecraft, Fortnite, The Witcher 3, Stardew Valley</div>
+          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/joystick.png" alt="Pixelated Joystick">
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">2020s - Cloud & VR <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <p>Cloud gaming, virtual reality, and AI are transforming how we play and create games.</p>
+          <ul>
+            <li>2020: Cloud gaming services like Xbox Cloud, Stadia, and GeForce Now expand access.</li>
+            <li>VR headsets become more affordable and immersive (Oculus Quest, PSVR2).</li>
+            <li>AI-driven NPCs and procedural content generation emerge.</li>
+            <li>Cross-platform and social play become the norm.</li>
+            <li><strong>Game Lore Fact:</strong> In 2023, AI-powered NPCs began to hold real conversations with players, blurring the line between game and reality.</li>
+          </ul>
+          <div class="games">Games: Half-Life: Alyx, Among Us, Genshin Impact, Beat Saber</div>
+          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/virtual-reality.png" alt="Pixelated VR Headset">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Short Timeline Section (no images) -->
+  <section class="timeline">
+    <h2 class="timeline-heading pixel-font scroll-animate">Timeline</h2>
+    <p class="timeline-sub pixel-font scroll-animate">A brief history of important events</p>
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">1980s - The Beginning <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <ul>
+            <li>1983: Company founded.</li>
+            <li>1987: First product released.</li>
+            <li>1989: Expanded to international markets.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">1990s - Growth <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <ul>
+            <li>1992: Launched new software platform.</li>
+            <li>1997: Reached 1 million users.</li>
+            <li>1999: Opened new headquarters.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-card">
+        <h3 class="era-title pixel-font collapsible scroll-animate-left">2000s - Innovation <span class="toggle-indicator">▶</span></h3>
+        <div class="content pixel-font scroll-animate">
+          <ul>
+            <li>2003: Introduced mobile app.</li>
+            <li>2008: Partnered with major tech firms.</li>
+            <li>2009: Won industry awards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback/Review Page Section -->
+  <section id="feedback" class="pixel-font" style="background:#0a0a0a; color:#70ffea; padding:2.5rem 0 3rem 0; text-align:center;">
+    <div style="display:flex; flex-direction:column; align-items:center;">
+      <div style="margin-bottom:1.5rem;">
+        <img src="https://img.icons8.com/ios-filled/100/00ffee/ps-controller.png" alt="Pixelated PS5 Controller" style="width:80px; image-rendering:pixelated; filter:drop-shadow(0 0 8px #00ffee88);">
+        <h2 style="color:#00ffee; margin:0.5rem 0 0 0; font-size:2rem; letter-spacing:0.08em;">Game Lore Feedback & Reviews</h2>
+        <p style="color:#70ffea; font-size:0.9rem; margin:0.5rem 0 0.5rem 0;">Share your thoughts, suggestions, or reviews about Game Lore!</p>
+      </div>
+      <form id="feedbackForm" style="max-width:400px; width:100%; background:#111; border-radius:10px; box-shadow:0 0 10px #00ffee33; padding:1.5rem 1rem; margin-bottom:1.5rem;">
+        <div style="margin-bottom:1rem; text-align:left;">
+          <label for="name" style="color:#00ffee;">Name:</label><br>
+          <input type="text" id="name" name="name" required style="width:100%; padding:0.5rem; border-radius:4px; border:2px solid #00ffee; background:#222; color:#70ffea; font-family:inherit;">
+        </div>
+        <div style="margin-bottom:1rem; text-align:left;">
+          <label for="feedbackText" style="color:#00ffee;">Feedback/Review:</label><br>
+          <textarea id="feedbackText" name="feedback" rows="4" required style="width:100%; padding:0.5rem; border-radius:4px; border:2px solid #00ffee; background:#222; color:#70ffea; font-family:inherit;"></textarea>
+        </div>
+        <button type="submit" style="background:#00ffee; color:#111; border:none; border-radius:4px; padding:0.7rem 2rem; font-family:inherit; font-size:1rem; cursor:pointer; box-shadow:0 0 10px #00ffee88;">Submit</button>
+      </form>
+      <div id="feedbackSuccess" style="display:none; color:#00ffee; font-size:1.1rem; margin-bottom:1rem;">Thank you for your feedback!</div>
+      <div id="reviews" style="max-width:500px; width:100%; margin:0 auto; text-align:left;"></div>
+    </div>
+  </section>
+
+  <footer>
+    <h3 class="pixel-font">Game Lore</h3>
+    <p class="pixel-font">Celebrating the incredible journey of interactive entertainment</p>
+    <div class="social-icons">
+      <a href="#"><i data-feather="github"></i></a>
+      <a href="#"><i data-feather="twitter"></i></a>
+      <a href="#"><i data-feather="linkedin"></i></a>
+      <a href="#"><i data-feather="mail"></i></a>
+    </div>
+    <div class="footer-links pixel-font">
+      <div>
+        <h4>Eras</h4>
+        <a href="#">Arcade Era</a>
+        <a href="#">Console Revolution</a>
+        <a href="#">3D Revolution</a>
+      </div>
+      <div>
+        <h4>Modern Gaming</h4>
+        <a href="#">Online Gaming</a>
+        <a href="#">Mobile & Indie</a>
+        <a href="#">Cloud & VR</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="#">Game History</a>
+        <a href="#">Industry Stats</a>
+        <a href="#">Future Trends</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="#contact">Contact Info</a>
+        <a href="#about">About Us</a>
+      </div>
+    </div>
+    <p class="copyright pixel-font">© 2024 Game Lore. Celebrating the art and science of interactive entertainment.</p>
+  </footer>
+
+  <!-- Contact Section -->
+  <section id="contact" class="pixel-font" style="background:#0a0a0a; color:#70ffea; padding:2rem 0; text-align:center;">
+    <h2>Contact Info</h2>
+    <p>Email: <a href="mailto:gamelore@gmail.com" style="color:#00ffee;">gamelore@gmail.com</a></p>
+    <p>Phone: <a href="tel:8645885206" style="color:#00ffee;">864-588-5206</a></p>
+    <p>Twitter: <a href="https://twitter.com/gamelore" target="_blank" style="color:#00ffee;">@gamelore</a></p>
+    <p>Discord: <a href="https://discord.gg/example" target="_blank" style="color:#00ffee;">Join our Discord</a></p>
+    <p>Address: 123 Pixel Lane, Game City, 90000</p>
+  </section>
+
+  <section id="about" class="pixel-font" style="background:#111; color:#70ffea; padding:2rem 0; text-align:center;">
+    <h2>About Us</h2>
+    <p>Game Lore is a passion project by retro and modern gaming fans, dedicated to celebrating the history, culture, and future of video games. Our mission is to educate, inspire, and connect gamers of all generations through interactive timelines, stats, and stories.</p>
+    <p>Want to contribute or share your story? <a href="#contact" style="color:#00ffee;">Contact us!</a></p>
+  </section>
+
+  <audio id="click-sound" src="https://freesound.org/data/previews/256/256113_3263906-lq.mp3" preload="auto"></audio>
+
+  <script>
+    feather.replace();
+
+    // Collapsible timeline eras
+    document.querySelectorAll('.collapsible').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const indicator = header.querySelector('.toggle-indicator');
+        const audio = document.getElementById('click-sound');
+        if (audio) audio.currentTime = 0;
+        if (audio) audio.play();
+
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          if (indicator) indicator.textContent = '▶';
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          if (indicator) indicator.textContent = '▼';
+        }
+      });
+    });
+
+    // Smooth scroll to timeline
+    const exploreBtn = document.getElementById('exploreBtn');
+    if (exploreBtn) {
+      exploreBtn.addEventListener('click', () => {
+        const timeline = document.querySelector('.timeline');
+        if (timeline) timeline.scrollIntoView({ behavior: 'smooth' });
+        const audio = document.getElementById('click-sound');
+        if (audio) audio.currentTime = 0;
+        if (audio) audio.play();
+      });
+    }
+
+    const learnMoreBtn = document.getElementById('learnMoreBtn');
+    if (learnMoreBtn) {
+      learnMoreBtn.addEventListener('click', () => {
+        alert('More info coming soon!');
+        const audio = document.getElementById('click-sound');
+        if (audio) audio.currentTime = 0;
+        if (audio) audio.play();
+      });
+    }
+
+   
+    const feedbackForm = document.getElementById('feedbackForm');
+    const feedbackSuccess = document.getElementById('feedbackSuccess');
+    const reviewsDiv = document.getElementById('reviews');
+    let reviews = JSON.parse(localStorage.getItem('gamelore_reviews') || '[]');
+
+    function renderReviews() {
+      if (!reviews.length) {
+        reviewsDiv.innerHTML = '<p style="color:#00ffee;">No reviews yet. Be the first to leave feedback!</p>';
+        return;
+      }
+      reviewsDiv.innerHTML = reviews.map(r => `
+        <div style="background:#222; border-left:4px solid #00ffee; margin-bottom:1rem; padding:0.7rem 1rem; border-radius:6px;">
+          <strong style="color:#00ffee;">${r.name}</strong><br>
+          <span style="color:#70ffea;">${r.text}</span>
+        </div>
+      `).join('');
+    }
+
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim() || 'Anonymous';
+        const text = document.getElementById('feedbackText').value.trim();
+        if (!text) return;
+        reviews.unshift({ name, text });
+        if (reviews.length > 20) reviews = reviews.slice(0, 20);
+        localStorage.setItem('gamelore_reviews', JSON.stringify(reviews));
+        feedbackForm.reset();
+        feedbackSuccess.style.display = 'block';
+        setTimeout(() => { feedbackSuccess.style.display = 'none'; }, 2000);
+        renderReviews();
+      });
+    }
+    renderReviews();
+
+    
+    function handleScrollAnimations() {
+      const animatedEls = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right');
+      const windowHeight = window.innerHeight;
+      animatedEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', handleScrollAnimations);
+    window.addEventListener('resize', handleScrollAnimations);
+    document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+  </script>
+</body>
+</html>
