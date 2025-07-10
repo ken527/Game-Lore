@@ -44,7 +44,7 @@
   <header class="site-header pixel-font scroll-animate">
     <div class="header-inner">
       <a href="#" class="logo-link" style="display:flex;align-items:center;gap:0.7rem;text-decoration:none;">
-        <img src="https://img.icons8.com/ios-filled/50/00ffee/console.png" alt="Game Lore Logo" style="width:48px;height:48px;image-rendering:pixelated;filter:drop-shadow(0 0 8px #00ffee88);">
+        <img src="https://img.icons8.com/ios-filled/100/00ffee/console.png" alt="Game Lore Logo" style="width:48px;height:48px;image-rendering:pixelated;filter:drop-shadow(0 0 8px #00ffee88);">
         <span class="site-title gradient-text" style="font-size:2.7rem;letter-spacing:0.08em;">Game Lore</span>
       </a>
       <nav class="main-nav">
@@ -54,6 +54,7 @@
         <a href="#contact" class="nav-link">Contact</a>
         <a href="#about" class="nav-link">About</a>
       </nav>
+      <button id="modeToggle" class="pixel-font" aria-label="Toggle dark/light mode" style="margin-left:2vw; font-size:1.5rem; background:#181818; color:#00ffee; border:2px solid #00ffee; border-radius:8px; padding:0.3rem 1.2rem; cursor:pointer; box-shadow:0 0 8px #00ffee55; transition:background 0.2s, color 0.2s; align-self:flex-end;">🌙</button>
     </div>
   </header>
   <div id="pixel-bg"></div>
@@ -79,6 +80,28 @@
 <!-- ...existing code... -->
 
   <!-- Stats Section -->
+  <!-- Educational Videos Section -->
+  <section class="videos-section pixel-font scroll-animate" style="background:#111; color:#70ffea; padding:2.5rem 0; text-align:center;">
+    <h2 class="gradient-text" style="font-size:2.2rem; margin-bottom:1.2rem; letter-spacing:0.08em;">Educational Videos: The History of Video Games</h2>
+    <p style="max-width:600px; margin:0 auto 2rem auto; color:#70ffea; font-size:1.2rem;">Dive deeper into the evolution of gaming with these curated educational videos that explore the milestones, innovations, and cultural impact of video games through the decades.</p>
+    <div class="videos-grid" style="display:flex; flex-wrap:wrap; gap:2vw; justify-content:center;">
+      <div class="video-card" style="background:#181818; border:2px solid #00ffee; border-radius:10px; box-shadow:0 0 12px #00ffee44; padding:1rem; max-width:400px; flex:1 1 340px;">
+        <iframe width="100%" height="225" src="https://www.youtube.com/embed/argpSxB1NQE" title="The Complete History of Video Games: 1972-2020" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;"></iframe>
+        <h3 style="color:#00ffee; font-size:1.1rem; margin:0.7rem 0 0.3rem 0;">The Complete History of Video Games: 1972-2020</h3>
+        <p style="font-size:0.95rem; color:#70ffea;">A comprehensive documentary covering the evolution of video games from Pong to the present day.</p>
+      </div>
+      <div class="video-card" style="background:#181818; border:2px solid #00ffee; border-radius:10px; box-shadow:0 0 12px #00ffee44; padding:1rem; max-width:400px; flex:1 1 340px;">
+        <iframe width="100%" height="225" src="https://www.youtube.com/embed/sPvXIeTr2qI" title="How Video Games Changed the World (BBC Documentary)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;"></iframe>
+        <h3 style="color:#00ffee; font-size:1.1rem; margin:0.7rem 0 0.3rem 0;">How Video Games Changed the World (BBC Documentary)</h3>
+        <p style="font-size:0.95rem; color:#70ffea;">A BBC documentary exploring the cultural and technological impact of video games on society.</p>
+      </div>
+      <div class="video-card" style="background:#181818; border:2px solid #00ffee; border-radius:10px; box-shadow:0 0 12px #00ffee44; padding:1rem; max-width:400px; flex:1 1 340px;">
+        <iframe width="100%" height="225" src="https://www.youtube.com/embed/GbQMvmYXK2s" title="The Evolution of Video Game Consoles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius:8px;"></iframe>
+        <h3 style="color:#00ffee; font-size:1.1rem; margin:0.7rem 0 0.3rem 0;">The Evolution of Video Game Consoles</h3>
+        <p style="font-size:0.95rem; color:#70ffea;">Explore the transformation of home consoles from the 1970s to today.</p>
+      </div>
+    </div>
+  </section>
   <section class="stats pixel-font">
     <div class="stats-heading">
       <h2>Game Lore by the Numbers</h2>
@@ -119,7 +142,7 @@
             <li>Pac-Man (1980) becomes a cultural icon.</li>
           </ul>
           <div class="games">Games: Pong, Space Invaders, Asteroids, Pac-Man</div>
-          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/arcade.png" alt="Pixelated Arcade Machine">
+          
         </div>
       </div>
       <div class="timeline-card">
@@ -133,7 +156,7 @@
             <li>8-bit and 16-bit graphics define the era.</li>
           </ul>
           <div class="games">Games: Super Mario Bros., The Legend of Zelda, Metroid</div>
-          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/game-console.png" alt="Pixelated Console">
+          
         </div>
       </div>
       <div class="timeline-card">
@@ -147,7 +170,7 @@
             <li>Multiplayer gaming rises with split-screen and LAN play.</li>
           </ul>
           <div class="games">Games: Final Fantasy VII, GoldenEye 007, Mario 64</div>
-          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/game-controller.png" alt="Pixelated Game Controller">
+          
         </div>
       </div>
       <div class="timeline-card">
@@ -161,7 +184,7 @@
             <li>Social and casual games reach new audiences.</li>
           </ul>
           <div class="games">Games: Halo, World of Warcraft, Angry Birds</div>
-          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/smartphone-tablet.png" alt="Pixelated Smartphone">
+          
         </div>
       </div>
       <div class="timeline-card">
@@ -176,7 +199,7 @@
             <li><strong>Game Lore Fact:</strong> In 2019, Fortnite hosted a virtual concert with Marshmello, attended by over 10 million players live in-game.</li>
           </ul>
           <div class="games">Games: Minecraft, Fortnite, The Witcher 3, Stardew Valley</div>
-          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/joystick.png" alt="Pixelated Joystick">
+          
         </div>
       </div>
       <div class="timeline-card">
@@ -191,7 +214,7 @@
             <li><strong>Game Lore Fact:</strong> In 2023, AI-powered NPCs began to hold real conversations with players, blurring the line between game and reality.</li>
           </ul>
           <div class="games">Games: Half-Life: Alyx, Among Us, Genshin Impact, Beat Saber</div>
-          <img class="pixel-img" src="https://img.icons8.com/ios-filled/100/00ffee/virtual-reality.png" alt="Pixelated VR Headset">
+          
         </div>
       </div>
     </div>
@@ -239,7 +262,7 @@
   <section id="feedback" class="pixel-font" style="background:#0a0a0a; color:#70ffea; padding:2.5rem 0 3rem 0; text-align:center;">
     <div style="display:flex; flex-direction:column; align-items:center;">
       <div style="margin-bottom:1.5rem;">
-        <img src="https://img.icons8.com/ios-filled/100/00ffee/ps-controller.png" alt="Pixelated PS5 Controller" style="width:80px; image-rendering:pixelated; filter:drop-shadow(0 0 8px #00ffee88);">
+        
         <h2 style="color:#00ffee; margin:0.5rem 0 0 0; font-size:2rem; letter-spacing:0.08em;">Game Lore Feedback & Reviews</h2>
         <p style="color:#70ffea; font-size:0.9rem; margin:0.5rem 0 0.5rem 0;">Share your thoughts, suggestions, or reviews about Game Lore!</p>
       </div>
@@ -247,6 +270,16 @@
         <div style="margin-bottom:1rem; text-align:left;">
           <label for="name" style="color:#00ffee;">Name:</label><br>
           <input type="text" id="name" name="name" required style="width:100%; padding:0.5rem; border-radius:4px; border:2px solid #00ffee; background:#222; color:#70ffea; font-family:inherit;">
+        </div>
+        <!-- Star Rating -->
+        <div id="starRating" style="margin-bottom:1rem; text-align:left; font-size:2rem; color:#00ffee; user-select:none;">
+          <label style="color:#00ffee; font-size:1rem;">Rating:</label><br>
+          <span class="star" data-value="1" style="cursor:pointer;">&#9734;</span>
+          <span class="star" data-value="2" style="cursor:pointer;">&#9734;</span>
+          <span class="star" data-value="3" style="cursor:pointer;">&#9734;</span>
+          <span class="star" data-value="4" style="cursor:pointer;">&#9734;</span>
+          <span class="star" data-value="5" style="cursor:pointer;">&#9734;</span>
+          <input type="hidden" id="starValue" name="rating" value="0">
         </div>
         <div style="margin-bottom:1rem; text-align:left;">
           <label for="feedbackText" style="color:#00ffee;">Feedback/Review:</label><br>
@@ -317,6 +350,37 @@
   <script>
     feather.replace();
 
+    // Dark/Light mode toggle
+    (function() {
+      const modeToggle = document.getElementById('modeToggle');
+      if (!modeToggle) return;
+      function setMode(mode) {
+        if (mode === 'dark') {
+          document.body.classList.add('dark-mode');
+          document.body.classList.remove('light-mode');
+          modeToggle.textContent = '🌙';
+        } else {
+          document.body.classList.add('light-mode');
+          document.body.classList.remove('dark-mode');
+          modeToggle.textContent = '☀️';
+        }
+        localStorage.setItem('gamelore_mode', mode);
+      }
+      function getSavedMode() {
+        return localStorage.getItem('gamelore_mode');
+      }
+      let saved = getSavedMode();
+      if (!saved) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        saved = prefersDark ? 'dark' : 'light';
+      }
+      setMode(saved);
+      modeToggle.addEventListener('click', function() {
+        const isDark = document.body.classList.contains('dark-mode');
+        setMode(isDark ? 'light' : 'dark');
+      });
+    })();
+
     // Collapsible timeline eras
     document.querySelectorAll('.collapsible').forEach(header => {
       header.addEventListener('click', () => {
@@ -358,7 +422,36 @@
       });
     }
 
-   
+    // Star rating logic
+    const stars = document.querySelectorAll('#starRating .star');
+    const starValueInput = document.getElementById('starValue');
+    let currentRating = 0;
+    stars.forEach(star => {
+      star.addEventListener('mouseenter', function() {
+        const val = parseInt(this.getAttribute('data-value'));
+        highlightStars(val);
+      });
+      star.addEventListener('mouseleave', function() {
+        highlightStars(currentRating);
+      });
+      star.addEventListener('click', function() {
+        currentRating = parseInt(this.getAttribute('data-value'));
+        starValueInput.value = currentRating;
+        highlightStars(currentRating);
+      });
+    });
+    function highlightStars(rating) {
+      stars.forEach(star => {
+        if (parseInt(star.getAttribute('data-value')) <= rating) {
+          star.innerHTML = '&#9733;'; // filled star
+        } else {
+          star.innerHTML = '&#9734;'; // empty star
+        }
+      });
+    }
+    highlightStars(0);
+
+    // Feedback/Review Form Logic
     const feedbackForm = document.getElementById('feedbackForm');
     const feedbackSuccess = document.getElementById('feedbackSuccess');
     const reviewsDiv = document.getElementById('reviews');
@@ -369,12 +462,20 @@
         reviewsDiv.innerHTML = '<p style="color:#00ffee;">No reviews yet. Be the first to leave feedback!</p>';
         return;
       }
-      reviewsDiv.innerHTML = reviews.map(r => `
+      reviewsDiv.innerHTML = reviews.map(r => {
+        let starsHtml = '';
+        if (r.rating && r.rating > 0) {
+          for (let i = 1; i <= 5; i++) {
+            starsHtml += `<span style='color:#00ffee; font-size:1.2rem;'>${i <= r.rating ? '★' : '☆'}</span>`;
+          }
+        }
+        return `
         <div style="background:#222; border-left:4px solid #00ffee; margin-bottom:1rem; padding:0.7rem 1rem; border-radius:6px;">
-          <strong style="color:#00ffee;">${r.name}</strong><br>
+          <strong style="color:#00ffee;">${r.name}</strong> ${starsHtml}<br>
           <span style="color:#70ffea;">${r.text}</span>
         </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     if (feedbackForm) {
@@ -382,11 +483,14 @@
         e.preventDefault();
         const name = document.getElementById('name').value.trim() || 'Anonymous';
         const text = document.getElementById('feedbackText').value.trim();
+        const rating = parseInt(document.getElementById('starValue').value) || 0;
         if (!text) return;
-        reviews.unshift({ name, text });
+        reviews.unshift({ name, text, rating });
         if (reviews.length > 20) reviews = reviews.slice(0, 20);
         localStorage.setItem('gamelore_reviews', JSON.stringify(reviews));
         feedbackForm.reset();
+        currentRating = 0;
+        highlightStars(0);
         feedbackSuccess.style.display = 'block';
         setTimeout(() => { feedbackSuccess.style.display = 'none'; }, 2000);
         renderReviews();
@@ -394,7 +498,6 @@
     }
     renderReviews();
 
-    
     function handleScrollAnimations() {
       const animatedEls = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right');
       const windowHeight = window.innerHeight;
