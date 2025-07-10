@@ -1,3 +1,66 @@
+/* --- Dark/Light Mode Styles --- */
+body.dark-mode {
+  background: #0a0a0a !important;
+  color: #70ffea !important;
+}
+body.light-mode {
+  background: #f6f6f6 !important;
+  color: #1a1a1a !important;
+}
+body.light-mode .gradient-text {
+  background: linear-gradient(135deg, #00aaff, #00ffe5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body.light-mode .site-header,
+body.light-mode .hero-content,
+body.light-mode .videos-section,
+body.light-mode .timeline,
+body.light-mode .stats,
+body.light-mode #flappy-dragon-section,
+body.light-mode #feedback,
+body.light-mode #contact,
+body.light-mode #about {
+  background: #fff !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 0 10px #00ffee22;
+}
+body.light-mode .btn-primary {
+  background: #00aaff !important;
+  color: #fff !important;
+  border: 2px solid #00aaff !important;
+}
+body.light-mode .btn-outline {
+  background: #fff !important;
+  color: #00aaff !important;
+  border: 2px solid #00aaff !important;
+}
+body.light-mode .video-card {
+  background: #f6f6f6 !important;
+  border: 2px solid #00aaff !important;
+  color: #1a1a1a !important;
+}
+body.light-mode .timeline-card {
+  background: #f6f6f6 !important;
+  border: 2px solid #00aaff !important;
+  color: #1a1a1a !important;
+}
+body.light-mode .stat {
+  background: #e0f7fa !important;
+  color: #1a1a1a !important;
+}
+body.light-mode .footer-links,
+body.light-mode footer {
+  background: #f6f6f6 !important;
+  color: #1a1a1a !important;
+}
+body.light-mode a {
+  color: #0077cc !important;
+}
+body.light-mode .pixel-font {
+  color: #1a1a1a !important;
+}
 /* --- Site Header Styles --- */
 .site-header {
   position: sticky;
