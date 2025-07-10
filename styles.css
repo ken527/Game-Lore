@@ -9,9 +9,8 @@ body.light-mode {
 }
 body.light-mode .gradient-text {
   background: linear-gradient(135deg, #00aaff, #00ffe5);
-  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 body.light-mode .site-header,
 body.light-mode .hero-content,
@@ -85,9 +84,7 @@ body.light-mode .pixel-font {
   font-size: 2.7rem;
   font-family: 'VT323', monospace !important;
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
-  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline-block;
   letter-spacing: 0.12em;
@@ -401,9 +398,7 @@ p, li, a, span, label, input, textarea, button, div, strong, em {
 
 .gradient-text {
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
-  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: transparent;
   text-shadow: 0 2px 12px #00ffee55;
 }
@@ -686,22 +681,7 @@ footer .copyright {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
 
-::-webkit-scrollbar-track {
-  background: #001a2d;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #00ffee;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #00aaff;
-}
 
 /* Responsive */
 @media (max-width: 600px) {
@@ -747,7 +727,7 @@ footer .copyright {
 #contact a, #about a {
   text-decoration: underline;
   color: #00ffee;
-  word-break: break-word;
+  overflow-wrap: break-word;
   transition: color 0.2s;
 }
 
