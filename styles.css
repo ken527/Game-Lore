@@ -1,3 +1,33 @@
+/* Custom Pixel-Art Scrollbar Styling */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffee #181818;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 14px;
+  background: #181818;
+}
+::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(
+    135deg,
+    #00ffee 0px,
+    #00ffee 4px,
+    #181818 4px,
+    #181818 8px
+  );
+  border: 3px solid #00ffee;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #00ffee88;
+}
+::-webkit-scrollbar-track {
+  background: #181818;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-corner {
+  background: #181818;
+}
 /* --- Dark/Light Mode Styles --- */
 body.dark-mode {
   background: #0a0a0a !important;
