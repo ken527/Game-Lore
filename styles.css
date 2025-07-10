@@ -1,32 +1,33 @@
-/* Custom Pixel-Art Scrollbar Styling */
+/* Custom Pixel-Art Scrollbar Styling (standards-compliant, with vendor pseudo-elements for progressive enhancement) */
 html {
   scrollbar-width: thin;
   scrollbar-color: #00ffee #181818;
 }
-
-/* Chrome, Edge, Safari */
-::-webkit-scrollbar {
-  width: 14px;
-  background: #181818;
-}
-::-webkit-scrollbar-thumb {
-  background: repeating-linear-gradient(
-    135deg,
-    #00ffee 0px,
-    #00ffee 4px,
-    #181818 4px,
-    #181818 8px
-  );
-  border: 3px solid #00ffee;
-  border-radius: 6px;
-  box-shadow: 0 0 8px #00ffee88;
-}
-::-webkit-scrollbar-track {
-  background: #181818;
-  border-radius: 6px;
-}
-::-webkit-scrollbar-corner {
-  background: #181818;
+/* Vendor pseudo-elements for Chrome, Edge, Safari (allowed for progressive enhancement) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  ::-webkit-scrollbar {
+    width: 14px;
+    background: #181818;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: repeating-linear-gradient(
+      135deg,
+      #00ffee 0px,
+      #00ffee 4px,
+      #181818 4px,
+      #181818 8px
+    );
+    border: 3px solid #00ffee;
+    border-radius: 6px;
+    box-shadow: 0 0 8px #00ffee88;
+  }
+  ::-webkit-scrollbar-track {
+    background: #181818;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-corner {
+    background: #181818;
+  }
 }
 /* --- Dark/Light Mode Styles --- */
 body.dark-mode {
@@ -40,8 +41,7 @@ body.light-mode {
 body.light-mode .gradient-text {
   background: linear-gradient(135deg, #00aaff, #00ffe5);
   background-clip: text;
-  /* Note: -webkit-background-clip removed for validation */
-  color: transparent;
+  color: transparent !important; /* standards-compliant, no vendor prefix */
 }
 body.light-mode .site-header,
 body.light-mode .hero-content,
@@ -116,8 +116,7 @@ body.light-mode .pixel-font {
   font-family: 'VT323', monospace !important;
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
   background-clip: text;
-  /* Note: -webkit-background-clip removed for validation */
-  color: transparent;
+  color: transparent !important; /* standards-compliant, no vendor prefix */
   display: inline-block;
   letter-spacing: 0.12em;
   text-shadow: 0 2px 12px #00ffee55;
@@ -431,9 +430,74 @@ p, li, a, span, label, input, textarea, button, div, strong, em {
 .gradient-text {
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
   background-clip: text;
-  /* Note: -webkit-background-clip removed for validation */
-  color: transparent;
+  color: transparent !important; /* standards-compliant, no vendor prefix */
   text-shadow: 0 2px 12px #00ffee55;
+}
+/* Accessibility: Focus Styles */
+:focus {
+  outline: 2px dashed #00ffee;
+  outline-offset: 2px;
+  box-shadow: 0 0 8px #00ffee88;
+}
+
+/* Animated Pixel-Art Link Underline */
+a {
+  position: relative;
+  transition: color 0.2s;
+}
+a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #00ffee 0 6px, transparent 6px 12px);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+a:hover::after, a:focus::after {
+  transform: scaleX(1);
+}
+
+/* Custom Selection Color */
+::selection {
+  background: #00ffee;
+  color: #111;
+}
+
+/* Pixel-Art Button Press Effect */
+button:active {
+  transform: scale(0.96) translateY(2px);
+  box-shadow: 0 0 4px #00ffee77;
+}
+
+/* Animated Pixel Borders for Cards/Sections */
+@keyframes pixelBorder {
+  0% { box-shadow: 0 0 8px #00ffee44; }
+  50% { box-shadow: 0 0 16px #00ffeecc; }
+  100% { box-shadow: 0 0 8px #00ffee44; }
+}
+.timeline-card, .video-card, .stat {
+  animation: pixelBorder 2.5s infinite;
+}
+
+/* Visually Hidden Utility Class for Accessibility */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 /* Buttons */
