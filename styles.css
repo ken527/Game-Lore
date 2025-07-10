@@ -309,12 +309,17 @@ body {
   color: #eafcff;
   font-family: 'VT323', monospace !important;
   overflow-x: hidden;
-  cursor: url('https://cdn.iconscout.com/icon/free/png-256/pixel-cursor-1779557-1516202.png'), auto;
+  cursor: url('https://ken527.github.io/Game-Lore/assets/pixel-cursor.png'), auto;
   position: relative;
   min-height: 100vh;
   letter-spacing: 0.08em;
   font-size: 1.7vw;
   transition: background 0.5s;
+}
+
+/* Retro pixel-art pointer for links, buttons, and interactive elements */
+a, button, .nav-link, .collapsible, input[type="submit"], input[type="button"] {
+  cursor: url('https://ken527.github.io/Game-Lore/assets/pixel-pointer.png'), pointer;
 }
 
 .pixel-font {
