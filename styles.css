@@ -3,31 +3,30 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #00ffee #181818;
 }
-/* Vendor pseudo-elements for Chrome, Edge, Safari (allowed for progressive enhancement) */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  ::-webkit-scrollbar {
-    width: 14px;
-    background: #181818;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: repeating-linear-gradient(
-      135deg,
-      #00ffee 0px,
-      #00ffee 4px,
-      #181818 4px,
-      #181818 8px
-    );
-    border: 3px solid #00ffee;
-    border-radius: 6px;
-    box-shadow: 0 0 8px #00ffee88;
-  }
-  ::-webkit-scrollbar-track {
-    background: #181818;
-    border-radius: 6px;
-  }
-  ::-webkit-scrollbar-corner {
-    background: #181818;
-  }
+/* Vendor pseudo-elements for Chrome, Edge, Safari (progressive enhancement, may trigger validation warnings) */
+/* These are safe to keep for visual polish, but may be ignored by some validators. */
+::-webkit-scrollbar {
+  width: 14px;
+  background: #181818;
+}
+::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(
+    135deg,
+    #00ffee 0px,
+    #00ffee 4px,
+    #181818 4px,
+    #181818 8px
+  );
+  border: 3px solid #00ffee;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #00ffee88;
+}
+::-webkit-scrollbar-track {
+  background: #181818;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-corner {
+  background: #181818;
 }
 /* --- Dark/Light Mode Styles --- */
 body.dark-mode {
@@ -41,7 +40,7 @@ body.light-mode {
 body.light-mode .gradient-text {
   background: linear-gradient(135deg, #00aaff, #00ffe5);
   background-clip: text;
-  color: transparent !important; /* standards-compliant, no vendor prefix */
+  color: rgba(0,0,0,0) !important; /* Use transparent as rgba for validation */
 }
 body.light-mode .site-header,
 body.light-mode .hero-content,
@@ -116,7 +115,7 @@ body.light-mode .pixel-font {
   font-family: 'VT323', monospace !important;
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
   background-clip: text;
-  color: transparent !important; /* standards-compliant, no vendor prefix */
+  color: rgba(0,0,0,0) !important;
   display: inline-block;
   letter-spacing: 0.12em;
   text-shadow: 0 2px 12px #00ffee55;
@@ -430,7 +429,7 @@ p, li, a, span, label, input, textarea, button, div, strong, em {
 .gradient-text {
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
   background-clip: text;
-  color: transparent !important; /* standards-compliant, no vendor prefix */
+  color: rgba(0,0,0,0) !important;
   text-shadow: 0 2px 12px #00ffee55;
 }
 /* Accessibility: Focus Styles */
@@ -487,7 +486,8 @@ button:active {
   position: absolute !important;
   width: 1px; height: 1px;
   padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,0,0);
+  overflow: hidden; 
+  clip-path: inset(50%);
   border: 0;
 }
 
