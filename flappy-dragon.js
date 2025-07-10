@@ -119,9 +119,34 @@ function update() {
   });
 }
 
+function drawPixelBackground() {
+  // Pixelated clouds and ground, retro style
+  for (let y = 0; y < canvas.height; y += 20) {
+    for (let x = 0; x < canvas.width; x += 20) {
+      // Sky pixels
+      if (y < canvas.height - 100 && Math.random() < 0.04) {
+        ctx.fillStyle = ['#00e0ff', '#00ffee', '#b2fff7', '#aaffff'][Math.floor(Math.random()*4)];
+        ctx.fillRect(x, y, 8, 8);
+      }
+      // Pixel clouds
+      if (y < 120 && Math.random() < 0.02) {
+        ctx.fillStyle = ['#e0f7fa', '#b2ebf2', '#fff'][Math.floor(Math.random()*3)];
+        ctx.fillRect(x, y, 16, 8);
+      }
+      // Pixel ground
+      if (y > canvas.height - 100 && Math.random() < 0.08) {
+        ctx.fillStyle = ['#006666', '#00ffee', '#003344', '#00aaff'][Math.floor(Math.random()*4)];
+        ctx.fillRect(x, y, 12, 12);
+      }
+    }
+  }
+}
+
 function draw() {
+  // Pixelated background first
   ctx.fillStyle = BG_COLOR;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+  drawPixelBackground();
   drawPipes();
   drawGround();
   drawDragon();
