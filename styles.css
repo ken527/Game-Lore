@@ -10,6 +10,7 @@ body.light-mode {
 body.light-mode .gradient-text {
   background: linear-gradient(135deg, #00aaff, #00ffe5);
   background-clip: text;
+  /* Note: -webkit-background-clip removed for validation */
   color: transparent;
 }
 body.light-mode .site-header,
@@ -85,6 +86,7 @@ body.light-mode .pixel-font {
   font-family: 'VT323', monospace !important;
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
   background-clip: text;
+  /* Note: -webkit-background-clip removed for validation */
   color: transparent;
   display: inline-block;
   letter-spacing: 0.12em;
@@ -399,6 +401,7 @@ p, li, a, span, label, input, textarea, button, div, strong, em {
 .gradient-text {
   background: linear-gradient(135deg, #00ffe5 30%, #00aaff 70%);
   background-clip: text;
+  /* Note: -webkit-background-clip removed for validation */
   color: transparent;
   text-shadow: 0 2px 12px #00ffee55;
 }
