@@ -12,6 +12,7 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#00ffee">
   <title>Game Lore - Pixel Edition</title>
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/32/00ffee/console.png">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/feather-icons"></script>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -43,18 +44,18 @@
 <body>
   <header class="site-header pixel-font scroll-animate">
     <div class="header-inner">
-      <a href="#" class="logo-link" style="display:flex;align-items:center;gap:0.7rem;text-decoration:none;">
-        <img src="https://img.icons8.com/ios-filled/100/00ffee/console.png" alt="Game Lore Logo" style="width:48px;height:48px;image-rendering:pixelated;filter:drop-shadow(0 0 8px #00ffee88);">
+      <a href="#" class="logo-link" aria-label="Game Lore Home" style="display:flex;align-items:center;gap:0.7rem;text-decoration:none;">
+        <img src="https://img.icons8.com/ios-filled/100/00ffee/console.png" alt="Game Lore Logo" style="width:48px;height:48px;image-rendering:pixelated;filter:drop-shadow(0 0 8px #00ffee88);" loading="lazy">
         <span class="site-title gradient-text" style="font-size:2.7rem;letter-spacing:0.08em;">Game Lore</span>
       </a>
-      <nav class="main-nav">
-        <a href="#flappy-dragon-section" class="nav-link">Flappy Dragon</a>
-        <a href="#main-timeline" class="nav-link">Timeline</a>
-        <a href="#feedback" class="nav-link">Feedback</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="#about" class="nav-link">About</a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="#flappy-dragon-section" class="nav-link" aria-label="Flappy Dragon section">Flappy Dragon</a>
+        <a href="#main-timeline" class="nav-link" aria-label="Timeline section">Timeline</a>
+        <a href="#feedback" class="nav-link" aria-label="Feedback section">Feedback</a>
+        <a href="#contact" class="nav-link" aria-label="Contact section">Contact</a>
+        <a href="#about" class="nav-link" aria-label="About section">About</a>
       </nav>
-      <button id="modeToggle" class="pixel-font" aria-label="Toggle dark/light mode" style="margin-left:2vw; font-size:1.5rem; background:#181818; color:#00ffee; border:2px solid #00ffee; border-radius:8px; padding:0.3rem 1.2rem; cursor:pointer; box-shadow:0 0 8px #00ffee55; transition:background 0.2s, color 0.2s; align-self:flex-end;">🌙</button>
+      <button id="modeToggle" class="pixel-font" aria-label="Toggle dark or light mode" style="margin-left:2vw; font-size:1.5rem; background:#181818; color:#00ffee; border:2px solid #00ffee; border-radius:8px; padding:0.3rem 1.2rem; cursor:pointer; box-shadow:0 0 8px #00ffee55; transition:background 0.2s, color 0.2s; align-self:flex-end;">🌙</button>
     </div>
   </header>
   <div id="pixel-bg"></div>
@@ -63,7 +64,7 @@
   </h1>
   <!-- ...existing code... -->
   <section class="hero">
-    <h2 class="pixel-font gradient-text" style="font-size:3vw; text-align:center; margin-bottom:1vw; letter-spacing:0.08em;">Welcome to Game Lore</h2>
+    <h2 class="pixel-font gradient-text" style="font-size:3vw; text-align:center; margin-bottom:1vw; letter-spacing:0.08em; filter:drop-shadow(0 0 8px #00ffee) brightness(2); color:#fff;">Welcome to Game Lore</h2>
     <div class="overlay"></div>
     <div class="hero-content scroll-animate"
       style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:3vw 2vw; background:rgba(0,0,0,0.5); border:4px solid #00ffee; border-radius:16px; box-shadow:0 0 30px #00ffee99; max-width:90vw; margin:0 auto;">
@@ -120,7 +121,7 @@
     <h2 class="scroll-animate-left" style="color:#00ffee;">Play Flappy Dragon!</h2>
     <p class="scroll-animate" style="margin-bottom:1.5rem;">Try our exclusive mini-game: guide the dragon through the pipes and beat your high score!</p>
     <div class="scroll-animate-right" style="display:flex; flex-direction:column; align-items:center;">
-      <iframe src="flappy-dragon.html" title="Flappy Dragon Game" width="420" height="700" style="border:4px solid #00ffee; border-radius:12px; box-shadow:0 0 20px #00ffee55; background:#111; margin-bottom:1rem;" allowfullscreen></iframe>
+      <iframe src="flappy-dragon.html" title="Flappy Dragon Game" width="420" height="700" style="border:4px solid #00ffee; border-radius:12px; box-shadow:0 0 20px #00ffee55; background:#111; margin-bottom:1rem;" allowfullscreen loading="lazy"></iframe>
       <a href="flappy-dragon.html" target="_blank" style="color:#00ffee; text-decoration:underline; font-size:0.9rem;">Open Flappy Dragon in a new tab</a>
     </div>
   </section>
@@ -334,7 +335,7 @@
     <h2>Contact Info</h2>
     <p>Email: <a href="mailto:gamelore@gmail.com" style="color:#00ffee;">gamelore@gmail.com</a></p>
     <p>Phone: <a href="tel:8645885206" style="color:#00ffee;">864-588-5206</a></p>
-    <p>Twitter: <a href="https://twitter.com/gamelore" target="_blank" style="color:#00ffee;">@gamelore</a></p>
+    <p>Twitter: <a href="https://twitter.com/gamelore" target="_blank" style="color:#00ffee;">gamelore</a></p>
     <p>Discord: <a href="https://discord.gg/example" target="_blank" style="color:#00ffee;">Join our Discord</a></p>
     <p>Address: 123 Pixel Lane, Game City, 90000</p>
   </section>
